@@ -32,6 +32,8 @@ Command Line Compilation: I used the command line to compile and run the program
 
 No External Dependencies: In order to keep the application portable, lightweight, and simple to maintain, I purposefully avoided using third-party libraries.
 
+Used resources like GOOGLE, QUICKREF, YOUTUBE AND CHATGPT for quick reference and to know some info, they helped me complete tasks efficiently.
+
 # Editor and Compiler Platforms:
 
 During development, I mainly used several environments to ensure broad compatibility:
