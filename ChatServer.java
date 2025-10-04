@@ -4,15 +4,18 @@ import java.util.*;
 
 public class ChatServer {
     private static final int PORT = 12345;
+    // List to hold all connected client output streams for broadcasting
     private static Set<ClientHandler> clientHandlers = new HashSet<>();
     public static void main(String[] args) {
         System.out.println("Chat server started on port " + PORT);
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            // Continuously accept new clients
             while (true) {
                 Socket socket = serverSocket.accept();
                 System.out.println("New client connected: " + socket.getInetAddress());
-
+                // Set up output stream to send messages to this client
                 ClientHandler handler = new ClientHandler(socket);
+                // Add this client's writer to the list for broadcasting
                 clientHandlers.add(handler);
                 new Thread(handler).start();
             }
@@ -44,13 +47,16 @@ public class ChatServer {
         }
         public void run() {
             try {
+                // First, get the username from the client
                 out = new PrintWriter(socket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out.println("Enter your name:");
                 clientName = in.readLine();
+                // Notify all clients about new user
                 System.out.println(clientName + " has joined the chat.");
                 broadcast(clientName + " has joined the chat.", this);
                 String message;
+                // Read messages from client and broadcast them
                 while ((message = in.readLine()) != null) {
                     if (message.equalsIgnoreCase("exit")) {
                         break;
@@ -61,6 +67,7 @@ public class ChatServer {
             } catch (IOException e) {
                 System.out.println("Client error: " + e.getMessage());
             } finally {
+                // Clean up when client disconnects
                 try {
                     socket.close();
                 } catch (IOException e) {
