@@ -112,3 +112,8 @@ Nobita: Hello, Glad to meet you
 
 Nobita: Btw, this is Nobita
 
+![Image](https://github.com/user-attachments/assets/be546930-a407-4d57-83ec-9d2e38a57e67)
+
+![Image](https://github.com/user-attachments/assets/4ba41145-0bda-44df-b464-406f6e528a7b)
+
+![Image](https://github.com/user-attachments/assets/aca72842-e356-4a4d-80f8-62ef8429e1bf)
