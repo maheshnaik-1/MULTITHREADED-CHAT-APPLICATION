@@ -12,7 +12,7 @@
 
 *MENTOR*: NEELA SANTOSH
 
-# Description of Task 3:
+# Description of Task3:
 
 For this task, I used Java socket programming to create a multithreaded client-server chat application.  Enabling simultaneous connections to a server and real-time communication between users was the aim.  I created a system that uses multithreading to allow the server to manage several client connections at once.  This enables seamless and continuous message exchange between all connected users since each client has its own dedicated thread.
 
